@@ -1,0 +1,14 @@
+h1= @post.title
+p= @post.content
+
+// Comments
+div
+  h3= "Number of comments: " + @post.comments.count.to_s
+  = render @post.comments
+
+  h3 Reply to thread
+  = render "comments/form"
+
+= link_to "Edit", edit_post_path(@post)
+= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
+= link_to "Home", root_path
