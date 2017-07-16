@@ -24,9 +24,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post, :owner?
   end
 
   def update
+    authorize @post, :owner?
     if @post.update(post_params)
       redirect_to @post
     else
@@ -35,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    authorize @post
+    authorize @post, :owner?
     @post.destroy
     redirect_to root_path
   end

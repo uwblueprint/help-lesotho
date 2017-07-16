@@ -14,12 +14,13 @@ class CommentsController < ApplicationController
   def edit
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
+    authorize @comment, :owner?
   end
 
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-
+    authorize @comment, :owner?
     if @comment.update(params[:comment].permit(:comment))
       redirect_to post_path(@post)
     else
@@ -30,7 +31,7 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    authorize @comment
+    authorize @comment, :owner?
     @comment.destroy
     redirect_to post_path(@post)
   end
