@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/admin', to: 'admin#index'
   root 'posts#index'
 end

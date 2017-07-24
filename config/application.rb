@@ -15,5 +15,6 @@ module HelpLesotho
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
+    config.assets.enabled = false
   end
 end

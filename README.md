@@ -3,6 +3,14 @@ The official repository for the Help Lesotho forums
 
 ## Setup
 
+### NodeJS
+This ain't no javascript app though!
+
+Version `6.x`
+
+### Yarn
+[See the docs](https://yarnpkg.com/en/docs/install);
+
 ### Ruby
 Only the latest and greatest
 [2.4.1](https://www.ruby-lang.org/en/news/2017/03/22/ruby-2-4-1-released/)
@@ -37,10 +45,15 @@ load environment variables.  Copy the included `.env.sample` file to `.env` and
 fill in the values for each variable
 
 ### Install App Dependencies
-If you haven't already, install bundler (`gem install bundler`)
-Then,
+If you haven't already, install bundler (`gem install bundler`),
+then install the dependencies:
 ```shell
 bundle install
+```
+
+Install the front-end build dependencies
+```shell
+bin/yarn install
 ```
 
 ### Rake Things
@@ -50,6 +63,20 @@ rake db:migrate
 ```
 
 ## Run the app
+
+Run the Rails server
 ```shell
 rails s
 ```
+
+In another session, run the `webpack-dev-server` to compile the frontend assets
+```shell
+bin/webpack-dev-server
+```
+
+### Frontend Setup
+
+If a view isn't dynamic, it's rendered server side, otherwise a react component
+is used.  This project uses the [webpacker](https://github.com/rails/webpacker)
+gem to build all javascript and CSS.  The front end source files are located in
+`app/frontend`.

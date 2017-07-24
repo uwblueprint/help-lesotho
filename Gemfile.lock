@@ -54,13 +54,6 @@ GEM
       xpath (~> 2.0)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -73,7 +66,6 @@ GEM
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
     erubi (1.6.1)
-    execjs (2.7.0)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -140,13 +132,6 @@ GEM
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
-    sass (3.4.25)
-    sass-rails (5.0.6)
-      railties (>= 4.0.0, < 6)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
     selenium-webdriver (3.4.3)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
@@ -176,13 +161,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.2.0)
-      execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -190,6 +170,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (2.0)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -202,7 +186,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
-  coffee-rails (~> 4.2)
   devise
   dotenv-rails
   jbuilder (~> 2.5)
@@ -211,16 +194,14 @@ DEPENDENCIES
   puma (~> 3.7)
   pundit
   rails (~> 5.1.2)
-  sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
   tzinfo-data
-  uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webpacker (~> 2.0)
 
 BUNDLED WITH
    1.15.1
