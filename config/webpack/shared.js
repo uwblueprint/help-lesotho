@@ -3,6 +3,7 @@
 /* eslint global-require: 0 */
 /* eslint import/no-dynamic-require: 0 */
 
+const _ = require('lodash');
 const webpack = require('webpack')
 const { basename, dirname, join, relative, resolve } = require('path')
 const { sync } = require('glob')
@@ -42,11 +43,14 @@ module.exports = {
       publicPath: output.publicPath,
       writeToFileEmit: true
     }),
-    // new webpack.LoaderOptionsPlugin({ options: { xo: { emitError: true }}})
+    new webpack.LoaderOptionsPlugin({ options: { xo: { emitError: false }}})
   ],
 
   resolve: {
     extensions: settings.extensions,
+    alias: {
+      Common: resolve('./app/frontend/common')
+    },
     modules: [
       resolve(settings.source_path),
       'node_modules'

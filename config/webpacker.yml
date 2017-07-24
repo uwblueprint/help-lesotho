@@ -4,6 +4,10 @@ default: &default
   source_path: app/frontend
   source_entry_path: packs
   public_output_path: packs
+  source_path_extras:
+    - app/frontend/application
+    - app/frontend/admin
+    - app/frontend/common
 
   extensions:
     - .coffee

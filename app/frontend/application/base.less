@@ -1,7 +1,36 @@
-h1 {
-  color: red;
+@import "../common/colors.less";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h2 {
-  color: blue;
+html,
+body {
+  margin: 0;
+}
+
+.buttonLink {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar {
+  background: @color-primaryDark;
+  border-bottom: solid 2px @color-accent;
+
+  &-listText {
+    color: @color-accent;
+    font-family: 'Helvetica', 'Ariel', sans-serif;
+    text-transform: uppercase;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
 }

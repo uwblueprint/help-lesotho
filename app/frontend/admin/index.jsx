@@ -3,17 +3,19 @@ import { render, h, Component } from 'preact';
 // Tell Babel to transform JSX into preact.h() calls:
 /** @jsx h */
 
-class AdminAppComponent extends Component {
-  constructor() {
-    super();
-    this.state = {};
+export default class AdminAppComponent extends Component {
+  render() {
+    return <AdminApp />;
   }
+}
 
-  render(props, state) {
-    return <AdminApp />
-  }
+const AdminApp = (props) => {
+  return (
+    <h1>Hello world</h1>
+  );
 };
 
-const AdminApp = props => {
-  return <h1>Admin App</h1>
-};
+render(
+  <AdminAppComponent />,
+  document.body
+)
