@@ -9,8 +9,9 @@ div
   h3 Reply to thread
   = render "comments/form"
 
-- if current_user.id == @post.user_id or current_user.admin
+- if current_user.present? && (current_user.id == @post.user_id || current_user.admin)
 	= link_to "Edit", edit_post_path(@post)
-- if current_user.id == @post.user_id or current_user.admin
-	= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
+- if current_user.present? && (current_user.id == @post.user_id || current_user.admin)
+	= button_to "Delete", post_path(@post), method: :delete
+
 = link_to "Home", root_path

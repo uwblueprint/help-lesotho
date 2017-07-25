@@ -18,5 +18,8 @@ module HelpLesotho
 
     # Use webpack for frontend builds
     config.assets.enabled = false
+
+    # Dont generate front end files when generating a controller
+    config.generators.assets = false
   end
 end

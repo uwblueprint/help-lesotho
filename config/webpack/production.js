@@ -32,4 +32,4 @@ module.exports = merge(sharedConfig, {
       test: /\.(js|css|html|json|ico|svg|eot|otf|ttf)$/
     })
   ]
-})
+});

@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title Help Lesotho
     = csrf_meta_tags
     = stylesheet_pack_tag "application"
@@ -12,7 +13,7 @@ html
       = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"
       = stylesheet_link_tag "https://unpkg.com/basscss@8.0.2/css/basscss.css"
 
-  body
+  body.u-widthWrapper
     header
       = content_tag :div,                   \
         id: "NavBarComponent",              \
@@ -21,13 +22,12 @@ html
           logged_in: (current_user != nil)  \
         }.to_json do
 
-      = link_to "Help Lesotho", root_path
+      p.notice.m0= notice
+      p.alert.m0= alert
 
-    section
-      = link_to "New Post", new_post_path
-
-    p.notice= notice
-    p.alert= alert
+      = link_to "Help Lesotho", root_path, { :class => "block" }
+      - if current_user != nil
+        = link_to "New Post", new_post_path
 
     = yield
 

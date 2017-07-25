@@ -1,13 +1,18 @@
 import {render, h} from 'preact';
 import NavBarComponent from 'Common/components/navbar';
+import HomeSearchComponent from './home/home-search';
 import './base.less';
+import './home.less';
+import './util.less';
+import 'Common/components/card';
 import 'Common/shadows.less'
 
 // Tell Babel to transform JSX into preact.h() calls:
 /** @jsx h */
 
 const APPS = {
-  NavBarComponent
+  NavBarComponent,
+  HomeSearchComponent
 };
 
 function renderAppInElement(el) {
@@ -19,6 +24,8 @@ function renderAppInElement(el) {
   data = JSON.parse(data);
   const props = Object.assign({}, data);
 
+  console.log('rendering ' + el.id);
+
   render(
     <App {...props} />,
     el
@@ -29,7 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelectorAll('.__react-root')
     .forEach(renderAppInElement);
-
-  console.log('here i am');
 });
 

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -40,6 +40,13 @@ class PostsController < ApplicationController
     authorize @post, :owner?
     @post.destroy
     redirect_to root_path
+  end
+
+  def search
+    params.permit(:query)
+    puts params[:query]
+    @query = params[:query]
+    @posts = Post.where("title ILIKE ? OR content ILIKE ?", "%#{@query}%", "%#{@query}");
   end
 
   private

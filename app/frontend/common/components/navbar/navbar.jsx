@@ -25,35 +25,35 @@ export default class NavBarComponent extends Component {
         logged_in={ logged_in }
         handleSignOut={ this.handleSignOut }
       />
-    )
+    );
   }
-};
+}
 
 const NavBar = ({ handleSignOut, logged_in }) => {
   let sessionButtons = null;
   if (logged_in) {
     sessionButtons = (
-      <ul class="list-reset right-align my0">
+      <ul class="list-reset right-align m0">
         <li class="inline-block">
-          <button class="navbar-listText buttonLink bold text-decoration-none p2" onClick={() => handleSignOut()}>Sign Out</button>
+          <button class="navbar-listText buttonLink bold text-decoration-none h5 p1" onClick={() => handleSignOut()}>Sign Out</button>
         </li>
       </ul>
     );
   } else {
     sessionButtons = (
-      <ul class="list-reset right-align my0">
-        <li class="inline-block my2">
-          <a class="navbar-listText bold text-decoration-none p2" href="/users/sign_in">Sign In</a>
+      <ul class="list-reset right-align m0">
+        <li class="inline-block my1">
+          <a class="navbar-listText bold text-decoration-none h5 p1" href="/users/sign_in">Log In</a>
         </li>
-        <li class="inline-block my2">
-          <a class="navbar-listText bold text-decoration-none p2" href="/users/sign_up">Sign Up</a>
+        <li class="inline-block my1">
+          <a class="navbar-listText bold text-decoration-none h5 p1" href="/users/sign_up">Sign Up</a>
         </li>
       </ul>
     )
   }
 
   return (
-    <nav class="navbar box-shadow-3">
+    <nav class="navbar box-shadow-3" my1>
       {sessionButtons}
     </nav>
   );
