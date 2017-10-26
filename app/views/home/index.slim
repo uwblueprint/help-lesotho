@@ -1,4 +1,4 @@
-section.currentlyHappening.card.card-2.mx1.mb1
+section.card.card-2.mx1.mb1
   h1.card-divider.h3.m0.p2.regular.center What are people talking about in Lesotho?
 
   - if @posts.empty?
@@ -12,7 +12,7 @@ section.currentlyHappening.card.card-2.mx1.mb1
               img style="height: 50px; width: 50px" src="https://startbootstrap.com/img/brand-logos/grav-logo.svg"
             div.table-cell.align-middle.pr1
               h5.h5.m0.card-listItem-header= post.title
-              p.m0.card-listItem-text= post.content
+              p.m0.card-listItem-text=TruncateContent(post.content)
 
   div.right-align.py2.pr2
     a.btn.btn-secondary.mr2 Visit Forum
