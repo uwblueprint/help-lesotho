@@ -6,4 +6,17 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_user
+
+  end
+
+  def create_comment
+
+  end
+
+  def create_post
+
+  end
+  
 end
