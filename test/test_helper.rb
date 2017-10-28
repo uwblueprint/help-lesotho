@@ -7,16 +7,14 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 
-  def create_user
-
+  def create_user #make to take parameters and have default values
+  	user = User.new({:email => "test@email.com"})
   end
 
   def create_comment
-
   end
 
   def create_post
-
   end
-  
+
 end
