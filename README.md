@@ -73,6 +73,14 @@ In another session, run the `webpack-dev-server` to compile the frontend assets
 ```shell
 bin/webpack-dev-server
 ```
+## Contributing
+
+### Testing
+
+Add unit tests for all backend changes you make. Run
+```shell
+rails test
+```
 
 ### Frontend Setup
 
