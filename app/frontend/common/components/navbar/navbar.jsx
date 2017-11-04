@@ -1,5 +1,6 @@
 import { render, h, Component } from 'preact';
 import axios from 'Common/helpers/axios';
+import './navbar.less'
 
 // Tell Babel to transform JSX into preact.h() calls:
 /** @jsx h */
@@ -31,15 +32,12 @@ export default class NavBarComponent extends Component {
 
 const NavBar = ({ handleSignOut, logged_in }) => {
   let homeButton = (
-
     <ul class="list-reset left-align my1">
       <li>
         <a class="navbar-listText bold text-decoration-none h5 p1" href="/">Home</a>
       </li>
     </ul>
-
-  )
-
+  );
 
   let sessionButtons = null;
   if (logged_in) {
@@ -66,8 +64,8 @@ const NavBar = ({ handleSignOut, logged_in }) => {
   return (
     <nav class="navbar box-shadow-3" my1>
       <ul class="list-reset m0">
-        <li style="width:50%; display:inline-block">{homeButton}</li>
-        <li style="width:50%; display:inline-block">{sessionButtons}</li>
+        <li class="nav-columns">{homeButton}</li>
+        <li class="nav-columns">{sessionButtons}</li>
       </ul>
     </nav>
   );
