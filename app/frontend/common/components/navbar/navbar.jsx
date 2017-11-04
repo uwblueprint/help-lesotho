@@ -30,6 +30,17 @@ export default class NavBarComponent extends Component {
 }
 
 const NavBar = ({ handleSignOut, logged_in }) => {
+  let homeButton = (
+
+    <ul class="list-reset left-align my1">
+      <li>
+        <a class="navbar-listText bold text-decoration-none h5 p1" href="/">Home</a>
+      </li>
+    </ul>
+
+  )
+
+
   let sessionButtons = null;
   if (logged_in) {
     sessionButtons = (
@@ -54,7 +65,10 @@ const NavBar = ({ handleSignOut, logged_in }) => {
 
   return (
     <nav class="navbar box-shadow-3" my1>
-      {sessionButtons}
+      <ul class="list-reset m0">
+        <li style="width:50%; display:inline-block">{homeButton}</li>
+        <li style="width:50%; display:inline-block">{sessionButtons}</li>
+      </ul>
     </nav>
   );
 };
