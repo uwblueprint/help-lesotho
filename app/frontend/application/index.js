@@ -37,4 +37,3 @@ document.addEventListener('DOMContentLoaded', () => {
     .querySelectorAll('.__react-root')
     .forEach(renderAppInElement);
 });
-
