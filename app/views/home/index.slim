@@ -9,9 +9,9 @@ section.card.card-2.mx1.mb1
         li
           a.card-divider.block.text-decoration-none.py2 href="#{post_path(post)}"
             div.table-cell.align-middle.px1
-              img style="height: 50px; width: 50px" src="https://startbootstrap.com/img/brand-logos/grav-logo.svg"
+              img.circle style="height: 50px; width: 50px" src="https://i.pinimg.com/564x/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.jpg"
             div.table-cell.align-middle.pr1
-              h5.h5.m0.card-listItem-header= post.title
+              h5.h5.m0.card-listItem-header=post.title
               p.m0.card-listItem-text=TruncateContent(post.content)
 
   div.right-align.py2.pr2
@@ -19,3 +19,17 @@ section.card.card-2.mx1.mb1
     button.btn Join The Community
 
 section#HomeSearchComponent.homeSearch.card.card-2.mx1.mtn1.mb2.__react-root
+
+section.card.card-2.mx1.mb1
+  h1.card-divider.h4.m0.p2.regular.left-align Featured Articles
+
+  - if @posts.empty?
+    h2 There aren't any posts yet
+  - else
+    ul.list-reset.m0
+      - @posts.each do |post|
+        li.two-col
+          div.a.card-divider.block.text-decoration-none.py2 href="#{post_path(post)}"
+            div.table-cell.px1 style="height:80px;"
+              h5.h5.m0.card-listItem-header= post.title
+              p.m0.card-listItem-text=TruncateContent(post.content)
