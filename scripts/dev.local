@@ -1,0 +1,31 @@
+#!/bin/bash
+# This script is used to setup, run, and do anything in the development environment
+
+##
+# Links git hooks
+install-hooks() {
+  HOOK_DIR=$(git rev-parse --show-toplevel)/.git/hooks
+  ln -sfn ../scripts/hooks $HOOK_DIR
+}
+
+##
+# Bunch of usage information
+help () {
+
+  # help and usage message
+  echo "Usage: ./dev.local <OPTION>"
+  echo ""
+  echo "Available options"
+  echo "  install-hooks - sets up git hooks"
+  echo ""
+}
+
+main () {
+  if [[ ${1} = "install-hooks" ]]; then
+      install-hooks
+  else
+      help
+  fi
+}
+
+main "$@"
