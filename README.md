@@ -62,6 +62,13 @@ rake db:create
 rake db:migrate
 ```
 
+### Setup Hooks
+
+```shell
+chmod -R a+x ./scripts
+./scripts/dev.local install-hooks
+```
+
 ## Run the app
 
 Run the Rails server

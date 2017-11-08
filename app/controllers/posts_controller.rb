@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :find_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show search]
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order('created_at DESC')
   end
 
   def show
@@ -43,9 +43,8 @@ class PostsController < ApplicationController
 
   def search
     params.permit(:query)
-    puts params[:query]
     @query = params[:query]
-    @posts = Post.where("title ILIKE ? OR content ILIKE ?", "%#{@query}%", "%#{@query}");
+    @posts = Post.where('title ILIKE ? OR content ILIKE ?', "%#{@query}%", "%#{@query}")
   end
 
   private
@@ -57,5 +56,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content)
   end
-
 end
