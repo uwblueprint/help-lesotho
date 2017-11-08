@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  default_scope { where(deleted: false) }
   belongs_to :user
   has_many :comments, dependent: :destroy
 
@@ -19,5 +20,9 @@ class Post < ApplicationRecord
     freshness_coefficient = 45_000
     Math.log10(num_activities) +
       sign * seconds_since_epoch / freshness_coefficient
+  end
+
+  def destroy
+    update(deleted: true)
   end
 end
