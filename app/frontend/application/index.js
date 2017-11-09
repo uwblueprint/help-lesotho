@@ -5,6 +5,7 @@ import './base.less';
 import './home.less';
 import './util.less';
 import 'Common/components/card';
+import 'Common/components/footer';
 import 'Common/shadows.less'
 
 // Tell Babel to transform JSX into preact.h() calls:

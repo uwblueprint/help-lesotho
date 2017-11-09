@@ -1,0 +1,33 @@
+@import "../../colors";
+
+.footer {
+  background: @color-primaryDark;
+  border-top: solid 1px @color-accent;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    a {
+      display: block;
+      padding: 10px;
+      color: @color-white;
+      border-bottom: solid 0.1px @color-grayLight;
+    }
+  }
+
+  &-listItem-header {
+    font-size: .9rem;
+    font-weight: 400;
+    padding-bottom: .2rem;
+  }
+
+  &-listItem-text {
+    font-size: .6rem;
+    color: @color-grayLighter;
+  }
+}
+
+.arrow-icon {
+  width: 15px;
+  height: 15px;
+}
