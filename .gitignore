@@ -51,3 +51,10 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Idea (RubyMine files)
+/.idea/
+
+# Vim files
+*.swp
+*.un~

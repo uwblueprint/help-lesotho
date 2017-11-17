@@ -80,6 +80,10 @@ In another session, run the `webpack-dev-server` to compile the frontend assets
 ```shell
 bin/webpack-dev-server
 ```
+
+You can run both at once using the startup.sh script!
+```shell
+scripts/startup
 ## Contributing
 
 ### Testing

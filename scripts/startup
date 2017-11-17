@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rails s & bin/webpack-dev-server && fg
