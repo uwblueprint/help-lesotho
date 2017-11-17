@@ -69,21 +69,16 @@ chmod -R a+x ./scripts
 ./scripts/dev.local install-hooks
 ```
 
-## Run the app
+## Run the apA
 
-Run the Rails server
-```shell
-rails s
-```
-
-In another session, run the `webpack-dev-server` to compile the frontend assets
-```shell
-bin/webpack-dev-server
-```
-
-You can run both at once using the startup.sh script!
+To run the app, simply call the startup script!
 ```shell
 scripts/startup
+```
+
+What this script does:
+It simultaneously starts a rails server `rails s` and runs `bin/webpack-dev-server` to compile the frontend assets.
+
 ## Contributing
 
 ### Testing
