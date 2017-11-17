@@ -69,7 +69,7 @@ chmod -R a+x ./scripts
 ./scripts/dev.local install-hooks
 ```
 
-## Run the apA
+## Run the app
 
 To run the app, simply call the startup script!
 ```shell
