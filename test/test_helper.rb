@@ -29,8 +29,8 @@ module ActiveSupport
       }.merge(params))
     end
 
-    def create_comment
-      comment = new_comment
+    def create_comment(params = {})
+      comment = new_comment(params)
       comment.save!
       comment
     end
@@ -41,8 +41,8 @@ module ActiveSupport
       }.merge(params))
     end
 
-    def create_post
-      post = new_post
+    def create_post(params = {})
+      post = new_post(params)
       post.save!
       post
     end
