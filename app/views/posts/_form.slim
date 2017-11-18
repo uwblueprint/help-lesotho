@@ -1,4 +1,6 @@
 = simple_form_for @post do |f|
   = f.input :title
   = f.input :content
+  - if @current_user.admin?
+    = f.input_field :featured, as: :boolean
   = f.submit
