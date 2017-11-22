@@ -1,4 +1,3 @@
-//Trending posts
 section.card.card-2.mx1.mb1
   h1.card-divider.h3.m0.p2.regular.center What are people talking about in Lesotho?
 
@@ -19,14 +18,10 @@ section.card.card-2.mx1.mb1
     a.btn.btn-secondary.mr2 Visit Forum
     button.btn Join The Community
 
-//Search component
 section#HomeSearchComponent.homeSearch.card.card-2.mx1.mtn1.mb1.__react-root
 
-
-//Featured posts
 section.card.card-2.mx1.mb1
   h1.card-divider.h4.m0.p2.regular.left-align Featured Posts
-
   - if @posts.empty?
     h2 There aren't any posts yet
   - else
@@ -38,34 +33,13 @@ section.card.card-2.mx1.mb1
               h5.h5.m0.card-listItem-header=post.title
               p.m0.card-listItem-text=truncate_content(post.content)
 
-//Footer links
 section.footer.mx1.mb1
   ul.list-reset.h6
     li
-      a.block.text-decoration-none href="#"
-        div.table-cell.align-middle.px1
-          img.arrow-icon src=asset_pack_path('right-arrow.png')
-        div.table-cell.align-middle.pr1
-          h5.m0.footer-listItem-header Forum
-          p.m0.footer-listItem-text Engage with your peers!
-    li
-      a.block.text-decoration-none href="#"
-        div.table-cell.align-middle.px1
-          img.arrow-icon src=asset_pack_path('right-arrow.png')
-        div.table-cell.align-middle.pr1
-          h5.m0.footer-listItem-header Articles
-          p.m0.footer-listItem-text Read stories and learn the basics about your body!
-    li
-      a.block.text-decoration-none href="#"
-        div.table-cell.align-middle.px1
-          img.arrow-icon src=asset_pack_path('right-arrow.png')
-        div.table-cell.align-middle.pr1
-          h5.m0.footer-listItem-header Get Help
-          p.m0.footer-listItem-text Find a clinic in your area!
-    li
-      a.block.text-decoration-none href="#"
-        div.table-cell.align-middle.px1
-          img.arrow-icon src=asset_pack_path('right-arrow.png')
-        div.table-cell.align-middle.pr1
-          h5.m0.footer-listItem-header Contact Us
-          p.m0.footer-listItem-text Get in touch with the Help Lesotho Foundation
+      - @items.each do |item|
+        a.block.text-decoration-none href=item[:link]
+          div.table-cell.align-middle.px1
+            img.arrow-icon src=asset_pack_path('right-arrow.png')
+          div.table-cell.align-middle.pr1
+            h5.m0.footer-listItem-header=item[:title]
+            p.m0.footer-listItem-text=item[:description]
