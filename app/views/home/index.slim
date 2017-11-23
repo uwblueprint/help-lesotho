@@ -36,7 +36,7 @@ section.card.card-2.mx1.mb1
 section.footer.mx1.mb1
   ul.list-reset.h6
     li
-      - @items.each do |item|
+      - @footer_links.each do |item|
         a.block.text-decoration-none href=item[:link]
           div.table-cell.align-middle.px1
             img.arrow-icon src=asset_pack_path('right-arrow.png')

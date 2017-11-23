@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   helper PostsHelper
+
   def index
-<<<<<<< 7c13f634a726dd70d5e0ec455342137795d6f58e
     # Select 3 posts within last 2 days with highest trending score
     day_limit = 2
     num_post = 3
@@ -19,26 +19,28 @@ class HomeController < ApplicationController
                             .reverse
     @posts += most_recent_posts
 
-    @items = [
-      {
-        link: '#link',
-        title: 'Forum',
-        description: 'Engage with your peers!'
-      },
-      {
-        link: '#link',
-        title: 'Articles',
-        description: 'Read stories and learn the basics about your body!'
-      },
-      {
-        link: '#link',
-        title: 'Get Help',
-        description: 'Find a clinic in your area!'
-      },
-      {
-        link: '#link',
-        title: 'Contact Us',
-        description: 'Get in touch with the Help Lesotho Foundation'
-    }].freeze
+    @footer_links =
+      [
+        {
+          link: '#link',
+          title: 'Forum',
+          description: 'Engage with your peers!',
+        },
+        {
+          link: '#link',
+          title: 'Articles',
+          description: 'Read stories and learn the basics about your body!',
+        },
+        {
+          link: '#link',
+          title: 'Get Help',
+          description: 'Find a clinic in your area!',
+        },
+        {
+          link: '#link',
+          title: 'Contact Us',
+          description: 'Get in touch with the Help Lesotho Foundation',
+        },
+      ].freeze
   end
 end
