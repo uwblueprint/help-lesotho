@@ -25,4 +25,31 @@ class PostTest < ActiveSupport::TestCase
                               Time.zone.local(2017, 1, 1).to_i / 45_000
     assert actual_trending_score == expected_trending_score
   end
+
+  test 'querying for posts do not return deleted posts by default' do
+    post = create_post
+    post_deleted = create_post(deleted: true)
+    all_posts = Post.all
+    assert_includes all_posts, post
+    refute_includes all_posts, post_deleted
+  end
+
+  test 'querying for unscoped posts return deleted posts as well' do
+    post = create_post
+    post_deleted = create_post(deleted: true)
+    all_posts = Post.unscoped.all
+    assert_includes all_posts, post
+    assert_includes all_posts, post_deleted
+  end
+
+  test 'new post does not have deleted set to true' do
+    post = create_post
+    assert_equal false, post.deleted
+  end
+
+  test 'destroying a post sets deleted to true' do
+    post = create_post
+    post.destroy
+    assert_equal true, post.deleted
+  end
 end

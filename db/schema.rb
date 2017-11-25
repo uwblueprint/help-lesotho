@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 # rubocop:disable Metrics/BlockLength
-ActiveRecord::Schema.define(version: 20170714233401) do # rubocop:disable Style/NumericLiterals
+ActiveRecord::Schema.define(version: 20171108174930) do # rubocop:disable Style/NumericLiterals
+
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170714233401) do # rubocop:disable Style/
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.integer 'user_id'
+    t.boolean 'deleted', default: false, null: false
   end
 
   create_table 'users', force: :cascade do |t|
