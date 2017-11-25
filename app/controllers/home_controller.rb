@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     @footer_links =
       [
         {
-          link: '#link',
+          link: 'forum',
           title: 'Forum',
           description: 'Engage with your peers!',
         },
@@ -37,7 +37,7 @@ class HomeController < ApplicationController
           description: 'Find a clinic in your area!',
         },
         {
-          link: '#link',
+          link: 'mailto:info@helplesotho.org',
           title: 'Contact Us',
           description: 'Get in touch with the Help Lesotho Foundation',
         },
