@@ -22,7 +22,6 @@ section#HomeSearchComponent.homeSearch.card.card-2.mx1.mtn1.mb1.__react-root
 
 section.card.card-2.mx1.mb1
   h1.card-divider.h4.m0.p2.regular.left-align Featured Posts
-
   - if @posts.empty?
     h2 There aren't any posts yet
   - else
@@ -33,3 +32,14 @@ section.card.card-2.mx1.mb1
             div.table-cell.featured-posts.px1
               h5.h5.m0.card-listItem-header=post.title
               p.m0.card-listItem-text=truncate_content(post.content)
+
+section.footer.mx1.mb1
+  ul.list-reset.h6
+    - @footer_links.each do |item|
+      li
+        a.block.text-decoration-none href=item[:link]
+          div.table-cell.align-middle.px1
+            img.arrow-icon src=asset_pack_path('right-arrow.png')
+          div.table-cell.align-middle.pr1
+            h5.m0.footer-listItem-header=item[:title]
+            p.m0.footer-listItem-text=item[:description]

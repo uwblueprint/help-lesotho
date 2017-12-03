@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   helper PostsHelper
+
   def index
     # Select 3 posts within last 2 days with highest trending score
     day_limit = 2
@@ -17,5 +18,29 @@ class HomeController < ApplicationController
                             .last(num_post - existing_post_num)
                             .reverse
     @posts += most_recent_posts
+
+    @footer_links =
+      [
+        {
+          link: 'forum',
+          title: 'Forum',
+          description: 'Engage with your peers!',
+        },
+        {
+          link: '#link',
+          title: 'Articles',
+          description: 'Read stories and learn the basics about your body!',
+        },
+        {
+          link: '#link',
+          title: 'Get Help',
+          description: 'Find a clinic in your area!',
+        },
+        {
+          link: 'mailto:info@helplesotho.org',
+          title: 'Contact Us',
+          description: 'Get in touch with the Help Lesotho Foundation',
+        },
+      ].freeze
   end
 end
